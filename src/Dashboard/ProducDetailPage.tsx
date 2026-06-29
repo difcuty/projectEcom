@@ -113,7 +113,8 @@ export default function ProductDetailPage({
     setLoadingOrder(true);
 
     try {
-      const response = await orderService.createOrder({
+// Tambahkan (orderService as any) agar TypeScript mengizinkan pemanggilan .createOrder
+      const response = await (orderService as any).createOrder({
         produk_id: product.id,
         jumlah: qty,
         harga_satuan: product.harga_dasar
