@@ -2,9 +2,10 @@
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.dottsbuildinfo",
-    "target": "ES2020",
+    /* 1. Ubah target dan lib ke ES2022 agar fungsi .at() dikenali */
+    "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -16,7 +17,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting / Matikan Strict Error di Sini 👇 */
+    /* 2. Tambahkan types agar Vite env dan css terbaca dengan benar */
+    "types": ["vite/client"],
+
+    /* Linting / Matikan Strict Error */
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
